@@ -3,7 +3,7 @@ using namespace std;
 
 //Andrew Yuan <andrew.yuan@cooper.edu>
 //This program defines foobar class and the two derived classes, foo and bar, 
-//along with functions to determine position and strength
+//along with functions to determine, name, position, and strength
 
 
 //foobar class constructor

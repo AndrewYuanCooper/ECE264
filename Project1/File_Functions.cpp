@@ -9,7 +9,7 @@ using namespace std;
 
 //Andrew Yuan <andrew.yuan@cooper.edu>
 //This program processes input file and creates objects, foobar, foo, and bar, and assigns positions to each. 
-//Then names and calculated strengths are recordeded to an output file
+//Names and calculated strengths are recordeded to an output file
 
 //Function analyzes file, records location of space and detects the first word and separates it into the three "classes"
 //Function assumes the input file is of the form "Foo blah"

@@ -9,8 +9,7 @@ using namespace std;
 
 //Andrew Yuan <andrew.yuan@cooper.edu>
 
-//This program prompts for input and output file to which it processes 
-//the input file, updates and writes an output file
+//This program prompts for input and output files to which it processes the input file, updates and writes an output file
 
 int main() {
 
