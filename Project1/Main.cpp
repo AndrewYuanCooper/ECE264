@@ -7,6 +7,11 @@
 #include "File_Functions.h"
 using namespace std;
 
+//Andrew Yuan <andrew.yuan@cooper.edu>
+
+//This program prompts for input and output file to which it processes 
+//the input file, updates and writes an output file
+
 int main() {
 
 //Enter input file
@@ -27,7 +32,7 @@ cin >> file_Output;
 ifstream input;
 ofstream output;
 
- //Open the input file for reading
+//Open the input file for reading
 input.open (file_Input);
 
 //Open the output file for writing

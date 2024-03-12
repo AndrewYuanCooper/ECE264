@@ -1,8 +1,14 @@
 #include "Foobar.h"
 using namespace std;
 
+//Andrew Yuan <andrew.yuan@cooper.edu>
+//This program defines foobar class and the two derived classes, foo and bar, 
+//along with functions to determine position and strength
+
+
 //foobar class constructor
 foobar::foobar(string Name) {
+    
     name = Name;
     pos = 0;
 }

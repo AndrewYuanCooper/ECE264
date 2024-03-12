@@ -7,6 +7,10 @@
 #include "Foobar.h"
 using namespace std;
 
+//Andrew Yuan <andrew.yuan@cooper.edu>
+//This program processes input file and creates objects, foobar, foo, and bar, and assigns positions to each. 
+//Then names and calculated strengths are recordeded to an output file
+
 //Function analyzes file, records location of space and detects the first word and separates it into the three "classes"
 //Function assumes the input file is of the form "Foo blah"
 void read_file(ifstream& filename, vector<foobar*>& vect) {
@@ -17,10 +21,9 @@ string line;
         
         size_t spacePos = line.find(" ");
         
-        if (spacePos == string::npos) continue; //If no space is found, skip the line *Credit to for realizing this case
-        
+        if (spacePos == string::npos) continue; 
+
         string word0 = line.substr(0, spacePos);
-        
         string word1 = line.substr(spacePos + 1);
         
         if (word0 == "foobar") {
