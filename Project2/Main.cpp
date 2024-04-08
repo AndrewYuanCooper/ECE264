@@ -116,7 +116,7 @@ int main() {
     cin >> in; 
   
     // get output file name
-    cout << "Enter the name output_file the output file: " << "\n"; 
+    cout << "Enter the name of the output file: " << "\n"; 
     cin >> out;
 
     // will read the input file, perform operations, and write to output file
