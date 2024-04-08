@@ -1,31 +1,35 @@
 #ifndef SIMPLELIST_H_
 #define SIMPLELIST_H_
 
-#include <string.h>
+#include <string>
+#include <list>
 
 using namespace std; 
 
 template <typename T> class SimpleList {
 
-    public
-        SimpleList(string name){head = nullptr; tail = nullptr; size = 0; list_name = name;}
-        string list_name;
+    public:
+        SimpleList(string n) { head = nullptr; tail = nullptr; size = 0; name = n;}
 
         virtual void push(T d) = 0;
         virtual T pop() = 0;
-        int get_size() const { return this->size; }
+        int get_size() { return this->size; }
+        string get_name() { return this->name; }
 
     private:
-        string name;
         struct Node {   
             T data;
             Node *next;
-
             Node(const T &d, Node *n = nullptr ) {
     	        data = d;
     	        next = n; 
             }
-    };
+        };
+
+        string name; 
+        int size; 
+        Node *tail; 
+        Node *head; 
     
     protected:
         int insert_front(T d); 
@@ -35,12 +39,13 @@ template <typename T> class SimpleList {
 
 //insert_front adds an element to the front of a list
 template <typename T> int SimpleList<T>::insert_front(T d) {
-      //creates new node with data d and sets the next node equal to the head
+
+    //creates new node with data d and sets the next node equal to the head
     Node *new_node = new Node(d);
     new_node->next = head;
 
-  //if there's an element in the list it sets the head to the new node
-  //otherwise if the list is empty it sets the head and the tail to the new node
+    //if there's an element in the list it sets the head to the new node
+    //otherwise if the list is empty it sets the head and the tail to the new node
     if (head == nullptr){
         
         head = new_node;
@@ -68,12 +73,13 @@ template <typename T> int SimpleList<T>::insert_end(T d) {
         tail = new_node;
     }
     else{
-        tail->next = new_node
+        tail->next = new_node;
         tail = new_node;
     }
     size++;
     return 0; 
 }
+
 template <typename T> T SimpleList<T>::rm_front() {
 
     Node *tmp = head;
@@ -101,7 +107,7 @@ template <typename T> T SimpleList<T>::rm_front() {
 template <typename T> class Stack : public SimpleList<T> {
     public:
         Stack(string name) : SimpleList<T>(name) {} 
-	    void push (T d) {return this-> insert_front(d);}
+	    void push (T d) { this->insert_front(d); }
 	    T pop () {return this-> rm_front();}
 };
 
@@ -109,8 +115,17 @@ template <typename T> class Stack : public SimpleList<T> {
 template <typename T> class Queue : public SimpleList<T> {
     public:
         Queue(string name) : SimpleList<T>(name) {}
-        void push (T d) {return this-> insert_end(d);}
+        void push (T d) { this->insert_end(d);}
         T pop () {return this-> rm_front();}
 };
+
+template <typename T> SimpleList<T> *get_list(list<SimpleList<T> *> l, string name) {
+  for (auto i : l) {
+    if(i->get_name().compare(name) == 0) {
+        return i; 
+    }
+  }
+  return nullptr; 
+}
 
 #endif //SIMPLELIST_H
