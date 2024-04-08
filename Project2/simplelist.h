@@ -1,4 +1,9 @@
+#ifndef SIMPLELIST_H_
+#define SIMPLELIST_H_
+
 #include <string.h>
+
+using namespace std; 
 
 template <typename T> class SimpleList {
 
@@ -108,4 +113,4 @@ template <typename T> class Queue : public SimpleList<T> {
         T pop () {return this-> rm_front();}
 };
 
-
+#endif //SIMPLELIST_H
