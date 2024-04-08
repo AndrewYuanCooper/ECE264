@@ -7,6 +7,9 @@
 
 using namespace std; 
 
+//This program prompts for input and output files to which it processes the input file, 
+// performs outlined stack and queue operations with creating/pushing/popping values, and writes to an output file.
+
 void read_file(string input, string output) {
   
     // ofstream and ifsteam objects to read and write from file
@@ -25,11 +28,10 @@ void read_file(string input, string output) {
     if(!input_file.is_open()) {
         return;
     }
-
-    while (!input_file.eof()){
+    string line;
+    while (getline(input_file, line)){
         //First type to store is cmd, second is type;
-        string line, cmd, name;
-        getline(input_file, line);
+        string cmd, name;
 
         istringstream iss(line);
 
