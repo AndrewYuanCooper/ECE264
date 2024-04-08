@@ -36,7 +36,7 @@ void read_file(string input, string output) {
         // Read token 1 into cmd and token 2 into name
         iss >> cmd >> name;
 
-        output_file << "PROCESSING cmd: " << line << "\n";
+        output_file << "PROCESSING COMMAND: " << line << "\n";
 
         if(cmd.compare("create") == 0) {
             string type; // type or list to create
